@@ -22,7 +22,7 @@ const assignSanta = require("./routes/assignSanta");
 connectDB();
 
 
-app.use('/', assignSanta);
+app.use('/api', assignSanta);
 
 app.use(handleError);
 app.listen(PORT, () => {
