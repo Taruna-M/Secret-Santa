@@ -122,7 +122,7 @@ const SecretSantaForm: React.FC = () => {
         <h2 style={styles.title}>🎅 Secret Santa Sign Up 🎄</h2>
         <div style={styles.inputGroup}>
           <label htmlFor="email" style={styles.label}>
-            Your Email:
+            Your Registered Email on Rablo:
           </label>
           <input
             id="email"
