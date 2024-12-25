@@ -15,7 +15,6 @@ const SecretSantaForm: React.FC = () => {
     axios
       .patch(`https://secret-santa-ten-nu.vercel.app/api/assign`, { email })
       .then((res) => {
-        console.log(res.data.response);
         setResponseDetails(res.data.response);
         setModalIsOpen(true);
         setEmail('');
