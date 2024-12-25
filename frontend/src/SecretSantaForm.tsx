@@ -145,13 +145,12 @@ const SecretSantaForm: React.FC = () => {
         style={styles.modal}
       >
         <h3 style={styles.modalTitle}>🎉 Secret Santa Details 🎁</h3>
-        <h2 style={styles.modalContent}>Yay! You are the Secret Santa to {responseDetails.name} so be sure to get them a meaningful gift. Below you can find their details needed to deliver their gift. Merry Christmas!</h2>
         <div style={styles.modalContent}>
           {responseDetails ? (
             <>
-
+            <h2 style={styles.modalContent}>Yay! You are the Secret Santa to {responseDetails.participantName} so be sure to get them a meaningful gift. Below you can find their details needed to deliver their gift. Merry Christmas!</h2>
               <p>
-                <strong>Assigned to:</strong> {responseDetails.name}
+                <strong>Assigned to:</strong> {responseDetails.participantName}
               </p>
               <p>
                 <strong>Email:</strong> {responseDetails.email}
@@ -162,6 +161,20 @@ const SecretSantaForm: React.FC = () => {
               <p>
                 <strong>Address:</strong> {responseDetails.address}
               </p>
+              <div>
+                <strong>Services:</strong>
+                {responseDetails.services && responseDetails.services.length > 0 ? (
+                  <ul>
+                    {responseDetails.services.map((service, index) => (
+                      <li style={{ textTransform: 'capitalize' }} key={index}>
+                        {service}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>No services available.</p>
+                )}
+              </div>
             </>
           ) : (
             <p>No details available.</p>

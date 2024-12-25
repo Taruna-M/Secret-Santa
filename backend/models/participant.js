@@ -27,6 +27,10 @@ const secretSantaPartcipantSchema = new Schema({
         type: String,
         default: null,
     },
+    services: {
+        type: [String],
+        required: true,
+    }
 });
 
 const Participant = mongoose.model('SecretSantaParticipants', secretSantaPartcipantSchema);
