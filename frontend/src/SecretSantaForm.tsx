@@ -13,7 +13,7 @@ const SecretSantaForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     axios
-      .patch(`http://localhost:6500/api/assign`, { email })
+      .patch(`https://secret-santa-ten-nu.vercel.app/api/assign`, { email })
       .then((res) => {
         console.log(res.data.response);
         setResponseDetails(res.data.response);
